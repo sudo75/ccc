@@ -1,6 +1,6 @@
 #include <iostream>
 
-computeTopScores()
+int computeTopScores(int top_scores[], int score);
 
 int main() {
     int participants;
@@ -13,8 +13,24 @@ int main() {
         int score;
         std::cin >> score;
 
-        if (score > top_scores[0]) top_scores[0] =
+        computeTopScores(top_scores, score);
     }
 
+    for (int i = 0; i < )
+
     return 0;
+}
+
+// array decays to pointer
+int computeTopScores(int top_scores[], int score) {
+    if (score > top_scores[0]) {
+        top_scores[2] = top_scores[1];
+        top_scores[1] = top_scores[0];
+        top_scores[0] = score;
+    } else if (score > top_scores[1]) {
+        top_scores[2] = top_scores[1];
+        top_scores[1] = score;
+    } else if (score > top_scores[2]) {
+        top_scores[2] = score;
+    }
 }
